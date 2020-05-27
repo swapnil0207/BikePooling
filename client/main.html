@@ -1,0 +1,95 @@
+<head>
+  <title>Bike Pooling</title>
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFQ_clF-9SDHjMw0p08QAiq38_AefyidhrV3RRAZVfCEQqg0SabWW6clLN1g&s" type=image/x-icon">
+</head>
+
+<body>
+  {{>navbar}}
+  {{>details}}
+  <br/>
+  <hr/>
+  {{>search}}
+</body>
+
+
+<template name="navbar">
+	<div class="navbar" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">Bike Pooling</a>
+			</div>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			<div class="navbar-collapse collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="Aboutus">About Us</a></li>
+					<li><a href="Contactus">Contact Us</a></li>
+					<li>{{> loginButtons}}</li> 
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="details">
+	<div class="container">
+		<h4>Please Enter Your Correct Details</h4>
+		<form class="myform">
+		Name: 
+		<input type="text" id="name" placeholder="Name">
+		<label for="mobile">Mobile:</label> 
+		<input type="number" id="mobile" placeholder="Mobile">
+		PinCode: 
+		<input type="number" id="pincode" placeholder="Pincode">
+		Gender: 
+		<select id="gender" name="gender">
+		  <option value="Male">Male</option>
+		  <option value="Female">Female</option>
+		  <option value="O">Others</option>
+		</select>
+		<hr/>
+		<div class="text-center">
+				<input type="submit" value="Submit Details" class=" btn-danger">
+		</div>
+		</form>
+	</div>  
+</template>
+
+<template name="search">
+	<div class="container">
+	<table style="width:100%">
+	<tr>
+	<th>Name</th>
+	<th>Mobile</th>
+	<th>Pincode</th>
+	<th>Gender</th>
+	</tr>
+		{{#each list}}
+<tr>	
+	<td>{{name}}</td>
+	<td>{{mobile}}</td>
+	<td>{{pincode}}</td>
+	<td>{{gender}}</td>
+</tr>
+		
+	{{/each}}
+	
+	</table>
+	</div>
+</template>
+
+
+
+
+
+
